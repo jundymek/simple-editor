@@ -1,16 +1,93 @@
 @import "_normalize";
 @import "_variables";
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext');
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+    color: $ebony;
+    background: $violet;
+}
+
+label {
+  margin-bottom:  60px;
+}
+
+.button-wrapper {
+  display: flex;
+  padding: 20px;
+  justify-content: flex-end;
+}
+
+.button {
+  width: 160px;
+  height: 48px;
+  margin:16px;
+  background-color: #121232;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.editor {
+    background-color: #f8f8f8;
+    width: 640px;
+    height: 440px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-rows: 6;
+    grid-template-areas:
+        "header description"
+        "form description";
+    &__description {
+        grid-area: description;
+        writing-mode: vertical-rl;
+        margin: 30px 16px 30px 0;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    &__form {
+        grid-area: form;
+        margin-left: 96px;
+    }
+}
+
+.form-field {
+  &__input {
+    width: 448px;
+    height: 48px;
+    border: 1px solid #a1a4b1;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  &__label {
+    font-size: 14px;
+  }
+}
+
+.header {
+  height: 50px;
+  &__title {
+    grid-area: header;
+    margin: 20px 0 19px 36px;
+    font-size: 44px;
+    line-height: 64px;
+    
+  }
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
 }
