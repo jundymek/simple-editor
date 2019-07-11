@@ -1,10 +1,10 @@
 @import "_normalize";
 @import "_variables";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext");
 
 html {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 *,
@@ -18,23 +18,22 @@ body {
     background: $violet;
 }
 
-label {
-  margin-bottom:  60px;
-}
-
 .button-wrapper {
-  display: flex;
-  padding: 20px;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 56px;
 }
 
 .button {
-  width: 160px;
-  height: 48px;
-  margin:16px;
-  background-color: #121232;
-  border-radius: 6px;
-  color: #ffffff;
+    width: 160px;
+    height: 48px;
+    background-color: #121232;
+    border-radius: 6px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    &--first {
+        margin-right: 32px;
+    }
 }
 
 .editor {
@@ -43,45 +42,66 @@ label {
     height: 440px;
     border-radius: 16px;
     display: grid;
-    grid-template-rows: 6;
+    grid-template-rows: auto;
     grid-template-areas:
         "header description"
         "form description";
     &__description {
         grid-area: description;
         writing-mode: vertical-rl;
-        margin: 30px 16px 30px 0;
+        margin: 34px 16px 30px 55px;
         font-size: 14px;
         line-height: 24px;
     }
     &__form {
         grid-area: form;
+        display: block;
         margin-left: 96px;
+        margin-top: 22px;
     }
 }
 
 .form-field {
-  &__input {
-    width: 448px;
-    height: 48px;
-    border: 1px solid #a1a4b1;
-    box-sizing: border-box;
-    border-radius: 4px;
-  }
-  &__label {
-    font-size: 14px;
-  }
+    display: block;
+    &--last {
+        margin-top: 22px;
+    }
+    &__input {
+        width: 448px;
+        height: 48px;
+        border: 1px solid #a1a4b1;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        &::placeholder {
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #8b90a0;
+        }
+    }
+    &__label {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: -9px;
+    }
 }
 
 .header {
-  height: 50px;
-  &__title {
-    grid-area: header;
-    margin: 20px 0 19px 36px;
-    font-size: 44px;
-    line-height: 64px;
-    
-  }
+    height: 0px;
+
+    &__title {
+        all: unset;
+        display: block;
+        grid-area: header;
+        margin: 22px 0 55px 38px;
+        font-size: 44px;
+        line-height: 64px;
+        font-weight: 600;
+    }
 }
 
 .main {
