@@ -16,6 +16,7 @@ html {
 body {
     color: $ebony;
     background: $violet;
+    -webkit-font-smoothing: antialiased;
 }
 
 .button-wrapper {
