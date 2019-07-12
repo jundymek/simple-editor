@@ -22,6 +22,9 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-top: 56px;
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
 }
 
 .button {
@@ -46,18 +49,32 @@ body {
     grid-template-areas:
         "header description"
         "form description";
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     &__description {
         grid-area: description;
         writing-mode: vertical-rl;
         margin: 34px 16px 30px 55px;
         font-size: 14px;
         line-height: 24px;
+        @media (max-width: $mobile) {
+          writing-mode: unset;
+        }
     }
     &__form {
         grid-area: form;
         display: block;
         margin-left: 96px;
         margin-top: 22px;
+        @media (max-width: $mobile) {
+          display: block;
+          margin: 100px 0 0 0;
+          width: 90%;
+        }
     }
 }
 
@@ -75,6 +92,9 @@ body {
         font-family: Open Sans;
         font-style: normal;
         font-weight: normal;
+        @media (max-width: $mobile) {
+          width: 100%;
+        }
         &::placeholder {
             padding-left: 18px;
             font-size: 14px;
@@ -101,6 +121,9 @@ body {
         font-size: 44px;
         line-height: 64px;
         font-weight: 600;
+        @media (max-width: $mobile) {
+          margin: 50px 0 0 0;
+        }
     }
 }
 
