@@ -149,16 +149,16 @@ body {
 }
 
 .backside {
-    transform: rotateY(180deg);
     width: 640px;
     height: 440px;
     border-radius: 16px;
     background-color: rgba(235, 233, 233, 0.925);
-    justify-content: center;
-    z-index: 1;
     position: absolute;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    &__description {
+        text-align: center;
+    }
     &__exit {
         all: unset;
         position: absolute;
@@ -167,5 +167,6 @@ body {
     }
     &__title {
         font-size: 24px;
+        text-align: center;
     }
 }

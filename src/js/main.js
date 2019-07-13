@@ -24,13 +24,19 @@ toLocalStorage.addEventListener('click', () => {
     localStorage.setItem(lastNameField, lastNameValue);
 });
 
+
+const backside = document.querySelector('.main');
 const fromLocalStorage = document.querySelector('.button--load--js')
 fromLocalStorage.addEventListener('click', () => {
     firstInput.value = localStorage.getItem(firstNameField);
     secondInput.value = localStorage.getItem(lastNameField);
     firstNameValue = localStorage.getItem(firstNameField);
     lastNameValue = localStorage.getItem(lastNameField);
-    const backside = document.querySelector('.main');
+    backside.classList.toggle('main--visible');
+})
+
+const backsideExit = document.querySelector('.backside__exit--js')
+backsideExit.addEventListener('click', () => {
     backside.classList.toggle('main--visible');
 })
 // localStorage.clear()
