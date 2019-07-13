@@ -30,5 +30,7 @@ fromLocalStorage.addEventListener('click', () => {
     secondInput.value = localStorage.getItem(lastNameField);
     firstNameValue = localStorage.getItem(firstNameField);
     lastNameValue = localStorage.getItem(lastNameField);
+    const backside = document.querySelector('.main');
+    backside.classList.toggle('main--visible');
 })
 // localStorage.clear()
