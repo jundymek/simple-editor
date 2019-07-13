@@ -24,5 +24,6 @@ Tehnologies and tools used in this project:
 - Node.js / NPM
 
 and of course it is made fully responsive, Here is mobile look:
+
 ![Simple form - mobile version image](github/mobile.png)
 
