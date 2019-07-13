@@ -31,5 +31,6 @@ const fromLocalStorage = document.querySelector('.button--load--js')
 fromLocalStorage.addEventListener('click', () => {
     const items = {...localStorage}
     firstInput.value = localStorage.getItem(firstNameField)
+    secondInput.value = localStorage.getItem(lastNameField)
 })
 // localStorage.clear()
