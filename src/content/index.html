@@ -38,7 +38,21 @@
       <header class="backside__header">
         <h2 class="backside__title">Current localstorage items</h2>
       </header>
-      <p class="backside__description">Here are items you entered in previous screen - they are took from localstorage</p>
+      <table class="table">
+        <thead>
+          <tr class="table__tr">
+            <th class="table__th table-item table-item--js"></th>
+            <th class="table__th table-item--second table-item--second--js"></th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+          <tr class="table__tr">
+            <td class="table__td table-value table-value--js"></td>
+            <td class="table__td table-value--second table-value--second--js"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="button button--clear button--clear--js">Clear</button>
       <button class="backside__exit backside__exit--js">X</button>
     </section>
   </main>

@@ -38,6 +38,9 @@ body {
     &--load {
         margin-right: 32px;
     }
+    &--clear {
+        margin-top: 44px;
+    }
 }
 
 .editor {
@@ -149,24 +152,72 @@ body {
 }
 
 .backside {
-    width: 640px;
+    max-width: 640px;
     height: 440px;
+    width: 100%;
     border-radius: 16px;
     background-color: rgba(235, 233, 233, 0.925);
     position: absolute;
     backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transform: rotateY(180deg);
-    &__description {
-        text-align: center;
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     &__exit {
         all: unset;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 14px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     &__title {
-        font-size: 24px;
+        font-size: 36px;
         text-align: center;
+        line-height: 64px;
+        margin-top: 70px;
+    }
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+    min-width: 450px;
+    &__body {
+        border: 1px solid black;
+        margin: 0;
+        padding: 0;
+    }
+    &__td {
+        border: 1px solid black;
+        margin: 0;
+        padding: 0;
+    }
+    &__th {
+        border: 1px solid black;
+        background: #c4c4c4;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+    }
+    &__tr {
+        margin: 0;
+        padding: 0;
+        height: 48px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
     }
 }

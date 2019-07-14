@@ -18,7 +18,8 @@ secondInput.addEventListener('keyup', (e) => {
 })
 
 const toLocalStorage = document.querySelector('.button--save--js');
-toLocalStorage.addEventListener('click', () => {
+toLocalStorage.addEventListener('click', (e) => {
+    e.preventDefault()
     console.log(toLocalStorage)
     localStorage.setItem(firstNameField, firstNameValue);
     localStorage.setItem(lastNameField, lastNameValue);
@@ -27,16 +28,24 @@ toLocalStorage.addEventListener('click', () => {
 
 const backside = document.querySelector('.main');
 const fromLocalStorage = document.querySelector('.button--load--js')
-fromLocalStorage.addEventListener('click', () => {
-    firstInput.value = localStorage.getItem(firstNameField);
-    secondInput.value = localStorage.getItem(lastNameField);
+fromLocalStorage.addEventListener('click', (e) => {
+    e.preventDefault()
     firstNameValue = localStorage.getItem(firstNameField);
     lastNameValue = localStorage.getItem(lastNameField);
     backside.classList.toggle('main--visible');
+    const tableFirstItem = document.querySelector('.table-item--js')
+    const tableSecondItem = document.querySelector('.table-item--second--js')
+    tableFirstItem.innerHTML = firstNameField
+    tableSecondItem.innerHTML = lastNameField
+    const tableFirstValue = document.querySelector('.table-value--js')
+    const tableSecondValue = document.querySelector('.table-value--second--js')
+    tableFirstValue.innerHTML = firstNameValue
+    tableSecondValue.innerHTML = lastNameValue
 })
 
 const backsideExit = document.querySelector('.backside__exit--js')
-backsideExit.addEventListener('click', () => {
+backsideExit.addEventListener('click', (e) => {
+    e.preventDefault();
     backside.classList.toggle('main--visible');
 })
 // localStorage.clear()
