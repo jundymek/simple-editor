@@ -33,12 +33,12 @@ fromLocalStorage.addEventListener('click', (e) => {
     firstNameValue = localStorage.getItem(firstNameField);
     lastNameValue = localStorage.getItem(lastNameField);
     backside.classList.toggle('main--visible');
-    const tableFirstItem = document.querySelector('.table-item--js')
-    const tableSecondItem = document.querySelector('.table-item--second--js')
+    const tableFirstItem = document.querySelector('.table__th--js')
+    const tableSecondItem = document.querySelector('.table__th--second--js')
     tableFirstItem.innerHTML = firstNameField
     tableSecondItem.innerHTML = lastNameField
-    const tableFirstValue = document.querySelector('.table-value--js')
-    const tableSecondValue = document.querySelector('.table-value--second--js')
+    const tableFirstValue = document.querySelector('.table__td--js')
+    const tableSecondValue = document.querySelector('.table__td--second--js')
     tableFirstValue.innerHTML = firstNameValue
     tableSecondValue.innerHTML = lastNameValue
 })
