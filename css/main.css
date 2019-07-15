@@ -308,6 +308,40 @@ template {
 [hidden] {
   display: none; }
 
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02); }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  75% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02); }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  75% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -349,6 +383,9 @@ body {
     margin-right: 32px; }
   .button--clear {
     margin-top: 44px; }
+  .button--clear-shake {
+    -webkit-animation: shake 0.2s ease-in-out;
+            animation: shake 0.2s ease-in-out; }
 
 .editor {
   background-color: #f8f8f8;
@@ -424,7 +461,12 @@ body {
     border-radius: 4px;
     font-family: Open Sans;
     font-style: normal;
-    font-weight: normal; }
+    font-weight: normal;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out; }
     @media (max-width: 640px) {
       .form-field__input {
         width: 100%; } }
@@ -453,6 +495,10 @@ body {
       font-size: 14px;
       line-height: 24px;
       color: #8b90a0; }
+    .form-field__input:focus {
+      -webkit-transform: scale(1.06);
+          -ms-transform: scale(1.06);
+              transform: scale(1.06); }
   .form-field__label {
     font-size: 14px;
     font-weight: 600;
@@ -553,7 +599,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-spacing: 0;
-  min-width: 450px; }
+  max-width: 450px;
+  width: 100%;
+  word-break: break-all;
+  overflow: scroll; }
   .table__body {
     border: 1px solid black;
     margin: 0;
@@ -561,7 +610,9 @@ body {
   .table__td {
     border: 1px solid black;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    min-width: 225px;
+    width: 100%; }
   .table__th {
     border: 1px solid black;
     background: #c4c4c4;
@@ -575,6 +626,10 @@ body {
     text-align: center;
     font-weight: 600;
     font-size: 18px;
-    line-height: 25px; }
+    line-height: 25px;
+    max-width: 225px; }
+
+.table-wrapper {
+  overflow: auto; }
 
 /*# sourceMappingURL=main.css.map */
