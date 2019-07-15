@@ -502,7 +502,7 @@ body {
   height: 440px;
   width: 100%;
   border-radius: 16px;
-  background-color: rgba(235, 233, 233, 0.925);
+  background-color: #f8f8f8;
   position: absolute;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
