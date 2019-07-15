@@ -17,7 +17,7 @@ secondInput.addEventListener('keyup', (e) => {
     lastNameValue = e.target.value;
 })
 
-const toLocalStorage = document.querySelector('.button--save--js');
+const toLocalStorage = document.querySelector('.button--save-js');
 toLocalStorage.addEventListener('click', (e) => {
     e.preventDefault()
     console.log(toLocalStorage)
@@ -27,18 +27,18 @@ toLocalStorage.addEventListener('click', (e) => {
 
 
 const backside = document.querySelector('.main');
-const fromLocalStorage = document.querySelector('.button--load--js')
+const fromLocalStorage = document.querySelector('.button--load-js')
+const tableFirstValue = document.querySelector('.table__td--js')
+const tableSecondValue = document.querySelector('.table__td--second-js')
 fromLocalStorage.addEventListener('click', (e) => {
+    const tableFirstItem = document.querySelector('.table__th--js')
+    const tableSecondItem = document.querySelector('.table__th--second-js')
     e.preventDefault()
     firstNameValue = localStorage.getItem(firstNameField);
     lastNameValue = localStorage.getItem(lastNameField);
     backside.classList.toggle('main--visible');
-    const tableFirstItem = document.querySelector('.table__th--js')
-    const tableSecondItem = document.querySelector('.table__th--second--js')
     tableFirstItem.innerHTML = firstNameField
     tableSecondItem.innerHTML = lastNameField
-    const tableFirstValue = document.querySelector('.table__td--js')
-    const tableSecondValue = document.querySelector('.table__td--second--js')
     tableFirstValue.innerHTML = firstNameValue
     tableSecondValue.innerHTML = lastNameValue
 })
@@ -48,4 +48,11 @@ backsideExit.addEventListener('click', (e) => {
     e.preventDefault();
     backside.classList.toggle('main--visible');
 })
-// localStorage.clear()
+
+const clearLocalstorage = document.querySelector('.button--clear-js')
+clearLocalstorage.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    tableFirstValue.innerHTML = '';
+    tableSecondValue.innerHTML = '';
+})
